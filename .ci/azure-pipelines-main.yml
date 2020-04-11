@@ -68,7 +68,7 @@ jobs:
           command: publish
           publishWebProjects: false
           projects: "${{ parameters.RestoreBuildProjects }}"
-          arguments: "--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)"
+          arguments: "--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) --source https://api.nuget.org/v3/index.json"
           zipAfterPublish: false
 
       - task: PublishPipelineArtifact@0
